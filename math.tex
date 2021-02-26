@@ -33,6 +33,7 @@ twocolumn]{scrartcl} % KOMA-article class
 \usepackage{tkz-euclide}
 \usetikzlibrary{decorations.pathreplacing}
 \usepackage{svg}
+\usepackage{tikz-3dplot}
 
 %%% Custom sectioning (sectsty package)
 \usepackage{sectsty} % Custom sectioning (see below)
@@ -454,7 +455,7 @@ These two vectors \ii and \jj are linearly dependent vectors.
 \formdesc{Determinant:}
 \begin{itemize}
 	\item Transformation $\tctmat{3}{0}{0}{2}$ scales $\hat{i}$ by factor 3 $\hat{j}$ by a factor 2.
-		
+\end{itemize}
 	\begin{tikzpicture}
 		\draw[thin,gray!40] (-5,-5) grid (5,5);
 		% new grid
@@ -470,6 +471,7 @@ These two vectors \ii and \jj are linearly dependent vectors.
 		\draw[line width=1pt,red,-stealth](0,0)--(0,2) node[anchor=north west]{$\hat{j}$ (0,2)};
 	\end{tikzpicture}
 
+\begin{itemize}
 	\item We observe that the unit square in transformed space is scaled from 1 sq. unit to 3 sq. units. So the determinant of the transform/matrix $\tctmat{3}{0}{0}{2}$ is 3. In case of 3d, volume is scaled.
 	\item For a matrix/transform $\tctmat{a}{b}{c}{d}$, the determinat is $ad-bc$.
 	\item The determinant can be $-ve$ if the axis cross each other during the transformation. It has the effect of \emph{flipping} or \emph{inverting} the space.
@@ -603,8 +605,8 @@ Projecting $\vec{a}$ on $\vec{b}$:
 \end{tikzpicture}
 
 \begin{itemize}
-	\item Length of projection = $a.cos\theta$
-	\item Dot product = $a .cos\theta . b$
+	\item Length of projection = $||a||cos\theta$
+	\item Dot product = $||b||.||a|| cos\theta $
 	\item The length of projection does not depend on the length of $\vec{b}$. It only depends on length of $\vec{a}$ and $\theta$.
 	\item Projecting $\vec{b}$ on $\vec{a}$ will result in the same dot product result. The order does not matter.
 	\item If projection does not lie betweeon origin and the end point of the other vector, you can extend the other vector since length of projection is not affected by it.
@@ -762,7 +764,67 @@ Orthogonal Matrix:
 
 
 \hformbar
-\formdesc{Lines, Planes and Hyperplanes:}\\
+\formdesc{Lines, Planes and Hyperplanes:}
+\begin{itemize}
+	\item  \textbf{Line} - A line has 2 degrees of freedom. You need a point and a slope or two points to uniquely identify a line.
+	\item Equation of a line
+	\begin{enumerate}
+		\item $y=mx+c$ ; slope = m ; y - intercept = c ; passes through $(0,c)$
+		\item $ax+by+c=0$ is a simple linear form with 2 unknowns
+		\item $y-y_1=m(x-x_1)+c$ ; slope = m ; passes through $x_1$ and $y_1$
+	\end{enumerate}
+	\item Slope is the $tan$ of angle x axis makes with the line in anti-clock wise direction.
+	\item Any 2 points on a line can uniquely identify the line.
+	\item An object on a line can move in 1 dimension.
+\end{itemize}
 
+\hformbar
 
+\begin{itemize}
+	\item \textbf{Plane} - A plane is a flat 2d surface.
+	\item A $xy$ plane is an example of a plane.
+	\item To represent a plane you need 3 non collinear points or a point and a normal.
+	\item A normal is a vector that is perperndicular to all vectors on the surface.
+	\begin{enumerate}
+		\item So, by definition a plane is set all $(x,y,z)$ points that satisfy,
+					\begin{equation}
+						dot(\thcomat{$x$}{$y$}{$z$} - \thcomat{$x_0$}{$y_0$}{$z_0$}, \vec{n}) = 0
+					\end{equation}
+				Where:
+				
+					$\vec{n}=\thcomat{$n_1$}{$n_2$}{$n_3$}$ is the normal to the plane and  starts at point $\thcomat{$x_0$}{$y_0$}{$z_0$}$ which is located on the plane.
+	\end{enumerate}
+	\item The equation subsequently solves to,
+		\begin{equation}
+			n_1(x-x_0) + n_2(y-y_0) + n_3(z-z_0) = 0
+		\end{equation}
+		\begin{figure}[ht!]
+	\graphicspath{ {images/math/} }
+	\includesvg[width=\linewidth]{plane}
+	\end{figure}
+\end{itemize}
+
+\hformbar
+
+\begin{itemize}
+	\item \textbf{Hyperplane} - Is an extension to Line and a plane in higher dimensions.
+\end{itemize}
+
+\hformbar
+
+\begin{itemize}
+	\item A \textbf{Linear regression} model can successfully represent a line, plane or a hyperplane.
+\end{itemize}
+
+\hformbar
+\formdesc{Miscellaneous:}
+\begin{itemize}
+	\item Distance between two points $(x_1,y_1)$ and $(x_2,y_2)$ is $$\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$$
+	\item Length of a vector $a\hat{i}+b\hat{j}+c\hat{k}$ is $$\sqrt{a^2+b^2+c^2}$$ also known as L2 Norm. {\scriptsize (Check knn notes for info on norms.)}
+	\item Distance from a plane $ax+by+cz=0$ to a point $(x_1,y_1)$ is $$\frac{|ax_1+by_1+cz_1|}{\sqrt{a^2+b^2+c^2}}$$
+\end{itemize}
+
+\hformbar
+\formdesc{Credits:}
+\par{Most of this notes is taken from 3Blue1Brown's Essence of Linear Algebra playlist. Some images are taken from wikipedia.}
 \end{document}
