@@ -85,8 +85,8 @@ twocolumn]{scrartcl} % KOMA-article class
 	\posttitle{\par\end{flushleft}\vskip 0.5em}
 
 \preauthor{\begin{flushleft}\large \lineskip 0.5em \usefont{OT1}{phv}{b}{sl} \color{DarkRed}}
-	\author{Bhargav}	% Author name goes here
-	\postauthor{\footnotesize \usefont{OT1}{phv}{m}{sl} \color{Black} \hspace{5pt} github.com/brpy \par\end{flushleft}\HorRule}
+	\author{Bhargav} % Author name goes here
+	\postauthor{\footnotesize \usefont{OT1}{phv}{m}{sl} \color{Black} \hspace{5pt} github.com/brpy/ml-notes \par\end{flushleft}\HorRule}
 
 \date{\today} % No date
 
@@ -119,12 +119,19 @@ twocolumn]{scrartcl} % KOMA-article class
 		$#3$
 \end{bmatrix}}
 
+\DeclareUnicodeCharacter{03C6}{$\phi$ }
+\DeclareUnicodeCharacter{03C3}{$\sigma$ }
+\DeclareUnicodeCharacter{03BC}{$\mu$ }
+\DeclareUnicodeCharacter{2212}{$-$}
+\DeclareUnicodeCharacter{03A6}{$\Phi$ }
+\DeclareUnicodeCharacter{2248}{$\approx$ }
+
 %%% Begin document -----------------------------------------------------------------
 \begin{document}
 	\maketitle
 	\thispagestyle{fancy} 	% Enabling the custom headers/footers for the first page 
 	% The first character should be within \initial{}
-	\subsection{Linear Algebra:}
+	\section{Linear Algebra}
 	
 	\textbf{The following notes is primarily made for my revision. I might have skipped some topics that seemed obvious to me. I do not guarantee factual correctness of the notes. If you feel there are any errors, open a github issue/pr. Notes material is collected from various sources. Image credits are given in tex document and in src.csv}
 	
@@ -401,10 +408,8 @@ $\tctmat{1}{1}{0}{1}$ $\tcomat{x}{y}$
 	\draw[thin,gray!40] (-2,-2) grid (2,2);
 	\draw[<->] (-2,0)--(2,0) node[right]{$\hat{i}$};
 	\draw[<->] (0,-2)--(0,2) node[above]{$\hat{j}$};
-	\draw[line width=1pt,blue,-stealth](0,0)--(1,0) node[anchor=north east]{$\hat{i}$};
-	\draw[line width=1pt,red,-stealth](0,0)--(1,1) node[anchor=south east]{$\hat{j}$};
 	
-%new grid
+	%new grid
 	%horizontal
 	\foreach \y in {-2,...,2}
 	{\draw[orange!80] (-2,\y)--(2,\y);}
@@ -416,6 +421,9 @@ $\tctmat{1}{1}{0}{1}$ $\tcomat{x}{y}$
 	\draw[orange!80] (-1,-2)--(2,1);
 	\draw[orange!80] (0,-2)--(2,0);
 	\draw[orange!80] (1,-2)--(2,-1);
+	
+	\draw[line width=1pt,blue,-stealth](0,0)--(1,0) node[anchor=north east]{$\hat{i}$};
+	\draw[line width=1pt,red,-stealth](0,0)--(1,1) node[anchor=south east]{$\hat{j}$};
 \end{tikzpicture}
 
 \hformbar
@@ -438,7 +446,7 @@ $\tctmat{1}{1}{0}{1}$ $\tcomat{x}{y}$
 	\end{tikzpicture}
 
 These two vectors \ii and \jj are linearly dependent vectors.
-\item Two transform for ex. shear and rotation can be composed into a single transform. This composition transform is nothing but a multiplication of shear and rotation matrix.
+\item Two transforms for ex. shear and rotation can be composed into a single transform. This composition transform is nothing but a multiplication of shear and rotation matrix.
 	\begin{equation}
 	\underbracket{\tctmat{1}{1}{0}{1}}_{\mathclap{Shear}}
 	\overbracket{ \tctmat{0}{-1}{1}{0}}^{\mathclap{Rotation}} \tcomat{x}{y} = 
@@ -446,7 +454,7 @@ These two vectors \ii and \jj are linearly dependent vectors.
 	\end{equation}
 \item Product or composition of two matrices/ transforms,
 \begin{equation}
-	\tctmat{a}{b}{c}{d} \tctmat{e}{f}{g}{h} = \tctmat{ae+bg}{af+bh}{ce+dg}{cf+dh}
+	\tctmat{a}{b}{c}{d} \tctmat{e}{f}{g}{h} = \tctmat{ae$+$bg}{af$+$bh}{ce$+$dg}{cf$+$dh}
 \end{equation}
 
 \end{itemize}
@@ -456,7 +464,9 @@ These two vectors \ii and \jj are linearly dependent vectors.
 \begin{itemize}
 	\item Transformation $\tctmat{3}{0}{0}{2}$ scales $\hat{i}$ by factor 3 $\hat{j}$ by a factor 2.
 \end{itemize}
-	\begin{tikzpicture}
+\begin{figure}[ht!]
+		\centering
+		\begin{tikzpicture}
 		\draw[thin,gray!40] (-5,-5) grid (5,5);
 		% new grid
 		\foreach \x in {-3,0,3}
@@ -470,9 +480,11 @@ These two vectors \ii and \jj are linearly dependent vectors.
 		\draw[line width=1pt,blue,-stealth](0,0)--(3,0) node[anchor=south east]{$\hat{i}$ (3,0)};
 		\draw[line width=1pt,red,-stealth](0,0)--(0,2) node[anchor=north west]{$\hat{j}$ (0,2)};
 	\end{tikzpicture}
+\end{figure}
+
 
 \begin{itemize}
-	\item We observe that the unit square in transformed space is scaled from 1 sq. unit to 3 sq. units. So the determinant of the transform/matrix $\tctmat{3}{0}{0}{2}$ is 3. In case of 3d, volume is scaled.
+	\item We observe that the unit square in transformed space is scaled from 1 sq. unit to 6 sq. units. So the determinant of the transform/matrix $\tctmat{3}{0}{0}{2}$ is 6. In case of 3d, volume is scaled.
 	\item For a matrix/transform $\tctmat{a}{b}{c}{d}$, the determinat is $ad-bc$.
 	\item The determinant can be $-ve$ if the axis cross each other during the transformation. It has the effect of \emph{flipping} or \emph{inverting} the space.
 	
@@ -826,5 +838,154 @@ Orthogonal Matrix:
 
 \hformbar
 \formdesc{Credits:}
-\par{Most of this notes is taken from 3Blue1Brown's Essence of Linear Algebra playlist. Some images are taken from wikipedia.}
+\begin{itemize}
+	\item Most of this notes is taken from 3Blue1Brown's Essence of Linear Algebra playlist. Some images are taken from wikipedia.
+\end{itemize}
+
+\newpage
+\section{Probability}
+
+
+\hformbar
+\formdesc{Population and Sample:} 
+\begin{itemize}
+	\item (Statistical) population is a set of all the items or events which is of interest for a question or experiment.
+	\item (Statistical) sample is a subset of population. The aim of sampling is that our sample represents the population.\\ The advantage is that it is faster and cheaper to collect data than for the entire population.
+	
+	%https://en.wikipedia.org/wiki/Sampling_(statistics)#/media/File:Simple_random_sampling.PNG
+	\begin{figure}[ht!]
+		\caption{A random sampling process}
+		\graphicspath{ {images/math/} }
+		\includegraphics[width=\linewidth]{simple_random_sampling}
+	\end{figure}
+	
+	\begin{figure}[ht!]
+		\centering
+		\caption{A sample is a subset of population}
+		\begin{tikzpicture}
+			\filldraw[color=blue!60, fill=white!2, very thick](0,0) circle (3.0);
+			\filldraw[color=red!60, fill=red!5, very thick](0,-0.5) circle (1.8);
+			\node[text width=1.2cm] at (0,-1.8) {sample};
+			\node[text width=1.2cm] at (0,2.2) {population};
+		\end{tikzpicture}
+	\end{figure}
+\end{itemize}
+
+\newpage
+\hformbar
+\formdesc{Random variable:} ($X$)
+
+\begin{itemize}
+	\item A Random variable is a measurable function defined on probability space that maps from the sample space to real numbers.
+	\item It is called a \textbf{Discrete Random variable} if the range of the function is countable.
+	\item It is called a \textbf{Continous Random variable} if the range of the function is uncountably infinite or an interval.
+	\item Both these types of  Random variable has a distribution.
+		\begin{itemize}
+			\item If $X$ is a \textbf{Discrete Random variable}, it's distribution is a discrete probability distribution i.e. can be described by a probability mass function (pmf) that assigns a probability to each value in the range of  $X$.
+			\item If $X$ is a \textbf{Continous Random variable}, and \emph{absolutely continuous}, its distribution can be described by a probability density function (pdf).\\ Pdf assigns probailities to an interval and since the range is absolutely continuous, each individual point must have a probability of 0.
+		\end{itemize}
+	\item Not all continuous random variables are absolutely continuous.\\ A mixture distribution is one such counterexample; such random variables cannot be described by a probability density or a probability mass function. 
+	\item But all Random variable can be described by a Cumulative distribution function (cdf).
+	\item Ex. for a discrete rv is dice rolls and for continuous rv is height or incomes of people.
+\end{itemize}
+
+
+\hformbar
+\formdesc{Probability Distribution:}
+
+\begin{itemize}
+	\item A Probability Distribution is  the mathematical function that gives probabilities of occurences of different possible outcomes for an experiment.
+	\item It is a mathematical description of a random phenomenon in terms of its  sample space and the probabilities of events (subsets of the sample space).
+\end{itemize}
+
+\newpage
+\hformbar
+\formdesc{Probability Density Function (pdf):}
+\begin{itemize}
+	\item Pdf is a function used to specify the random variable falling within a particular range of values, as opposed to taking any particular value(which is 0, since there are infinite number of values).
+	\item Probablity is the integral or area under the curve over an interval.
+	\item It's value at any given point can be interpreted as providing the relative likelyhood that the value of the random variable would equal that sample.
+	\item In other words, while the absolute likelihood for a continuous random variable to take on any particular value is 0 (since there is an infinite set of possible values to begin with), the value of the PDF at two different samples can be used to infer, in any particular draw of the random variable, how much more likely it is that the random variable would equal one sample compared to the other sample. 
+\end{itemize}
+Properties of pdf:
+\begin{itemize}
+	\item Area under the curve or AUC(pdf) = 1
+	\item Value at any point of pdf curve has to be $\geq0$
+	\item For a continuous rv, it's pdf has to also be continuous.
+	\item A pdf doesn't have to be differentiable. For ex. Laplace distribution is not differentiable. $$\frac{1}{2}e^{-|x|}$$
+	\item But a CDF has to be differentiable.
+	\item A point on pdf provides relative likelyhood. Whereas, area under an interval gives probability.
+	\item Few random variables may not have pdf. They are called Singular distributions.
+\end{itemize}
+
+\newpage
+\hformbar
+\formdesc{Gaussian/ Normal Distribution:} ($N$)
+\begin{equation}
+	P(X=x) = \frac{1}{\sqrt{2\pi}\sigma} \exp{\frac{-(x-\mu)^2}{2\sigma^2}}
+\end{equation}
+where:
+
+	$\mu$ - Mean or expectation
+	
+	$\sigma$ - Standard deviation
+	
+	$\sigma^2$ - Variance
+	
+\begin{itemize}
+	\item The significance of Normal distribution comes from various factors like,
+		\begin{itemize}
+			\item Central limit theorem
+			\item Many natural properties follow a roughly Normal distribution
+			\item For a fixed mean and std. deviation, Normal disitribution has maximum entropy.
+		\end{itemize}
+	\item Though Normal distribution is commonly referred to as a bell curve, there are also other distributions in the bell curve family.
+\end{itemize}
+
+
+	%https://en.wikipedia.org/wiki/Normal_distribution#/media/File:Normal_Distribution_PDF.svg
+\begin{figure}[ht!]
+	\centering
+	\caption{pdf of a normal distribution}
+	\graphicspath{ {images/math/} }
+	\includegraphics[width=\linewidth]{normal_distribution_pdf}
+\end{figure}
+
+%https://en.wikipedia.org/wiki/Normal_distribution#/media/File:Normal_Distribution_CDF.svg
+\begin{figure}[ht!]
+	\centering
+	\caption{cdf of a normal distribution}
+	\graphicspath{ {images/math/} }
+	\includegraphics[width=\linewidth]{normal_distribution_cdf}
+\end{figure}
+
+\newpage
+68-95-99.7 Rule:
+
+\begin{itemize}
+	\item It is an empirical rule that a percentage of values lie within a band around the mean.
+		
+	%https://en.wikipedia.org/wiki/Statistics#/media/File:Standard_Normal_Distribution.png
+	\begin{figure}[ht!]
+		\caption{pdf of a standard normal distribution}
+		\graphicspath{ {images/math/} }
+		\includegraphics[width=\linewidth]{standard_normal_distribution}
+	\end{figure}
+	\item The percentage of values are,
+		\begin{itemize}
+			\item 68\% of values lie within $\mu-1\sigma$ and $\mu+1\sigma$
+			\item 95\% of values lie within $\mu-2\sigma$ and $\mu+2\sigma$
+			\item 99.7\% of values lie within $\mu-3\sigma$ and $\mu+3\sigma$
+		\end{itemize}
+	
+	\item Is valid for any value of $\mu$ and $\sigma$
+	%https://en.wikipedia.org/wiki/Statistics#/media/File:Standard_Normal_Distribution.png
+	\begin{figure}[ht!]
+		\caption{pdf of a normal distribution with mean $\mu$ and std-dev. $\sigma$}
+		\graphicspath{ {images/math/} }
+		\includesvg[width=\linewidth]{empirical_rule_histogram}
+	\end{figure}
+\end{itemize}
+
+
 \end{document}
