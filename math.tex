@@ -911,6 +911,7 @@ Properties of pdf:
 \begin{itemize}
 	\item Area under the curve or AUC(pdf) = 1
 	\item Value at any point of pdf curve has to be $\geq0$
+	\item x-axis : Random variable $X$ \\ y-axis : Relative likelyhood/ probability density.
 	\item For a continuous rv, it's pdf has to also be continuous.
 	\item A pdf doesn't have to be differentiable. For ex. Laplace distribution is not differentiable. $$\frac{1}{2}e^{-|x|}$$
 	\item But a CDF has to be differentiable.
@@ -955,6 +956,7 @@ where:
 \begin{figure}[ht!]
 	\centering
 	\caption{cdf of a normal distribution}
+	\label{fig:cdf-normal}
 	\graphicspath{ {images/math/} }
 	\includegraphics[width=\linewidth]{normal_distribution_cdf}
 \end{figure}
@@ -963,7 +965,7 @@ where:
 68-95-99.7 Rule:
 
 \begin{itemize}
-	\item It is an empirical rule that a percentage of values lie within a band around the mean.
+	\item It is an empirical rule that a percentage of values lie within a band around the mean for a normal distribution.
 		
 	%https://en.wikipedia.org/wiki/Statistics#/media/File:Standard_Normal_Distribution.png
 	\begin{figure}[ht!]
@@ -987,5 +989,80 @@ where:
 	\end{figure}
 \end{itemize}
 
+\newpage
+
+\hformbar
+\formdesc{Cumulative distribution function:} (CDF)
+
+\begin{itemize}
+	\item The probability that rv $X$ will take a value less than $x$. $P(X<x)$.
+	\item Fig \ref{fig:cdf-normal} on page \pageref{fig:cdf-normal}, represents cdf of some normal distributions.
+	\item CDF of a distribution has to differentiable and non decreasing.
+	\item x-axis : Random variable $X$ \\ y-axis : $P(X<x)$
+	\item Slope at a point on cdf gives pdf.
+	
+	\begin{equation}
+		f(x)=\frac{dF(x)}{dx}
+	\end{equation}
+	\begin{equation}
+		F(x)=\int_{-\infty}^{x}f(t) dt
+	\end{equation}
+where:
+
+	$F(x)$ is cdf.
+	
+	$f(x)$ is pdf.
+	
+	\item All random variable have cdf.
+	\item  On observing CDFs it is easy to get an idea on percentiles.
+\end{itemize}
+
+\hformbar
+\formdesc{Probability mass function:} (PMF)
+
+\begin{itemize}
+	\item Probability mass function (PMF) is a function that gives the probability that a discrete random variable is exactly equal to some value.
+	\item It is associated with discrete random variable.
+	\item Unlike pdf's there's no need to integrate to get probabilities.
+	\item Some examples are Bernoulli distribution and Binomial distribution.
+	\item Sum of all probabilities has to equal 1, and no values can be negative. 
+	%https://en.wikipedia.org/wiki/File:Fair_dice_probability_distribution.svg#/media/File:Fair_dice_probability_distribution.svg
+	\begin{figure}[ht!]
+		\centering
+		\caption{pmf of a fair dice}
+		\graphicspath{ {images/math/} }
+		\includesvg[width=\linewidth]{fair_dice_probability_distribution}
+	\end{figure}
+	
+	%https://en.wikipedia.org/wiki/File:Discrete_probability_distrib.svg#/media/File:Discrete_probability_distrib.svg
+	\begin{figure}[ht!]
+		\centering
+		\caption{A discrete probaility distribution function}
+		\graphicspath{ {images/math/} }
+		\includesvg[width=\linewidth]{discrete_probability_distrib}
+	\end{figure}
+
+\end{itemize}
+
+\newpage
+\hformbar
+\formdesc{Mean, Median and Mode:}
+
+\begin{itemize}
+	\item Mean ($\mu$) : $$\frac{1}{n}\sum_{i=1}^{n}x_i$$
+	where:
+	
+		$\mu$ - mean of the population
+		
+		$n$ - size of the population
+		
+		$x_i$ - value from population
+	\item Median : \\ Central most observation after sorting. If two values are in middle, median is the average of the two.
+	\item Mode: Most frequent observation.
+	\item These are the measures of central tendency.
+\end{itemize}
+
+\hformbar
+\formdesc{Variance:}
 
 \end{document}
