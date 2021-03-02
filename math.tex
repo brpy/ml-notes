@@ -843,11 +843,12 @@ Orthogonal Matrix:
 \end{itemize}
 
 \newpage
-\section{Probability}
+\section{Statistics}
 
 
 \hformbar
-\formdesc{Population and Sample:} 
+
+\formdesc{Population and Sample}: 
 \begin{itemize}
 	\item (Statistical) population is a set of all the items or events which is of interest for a question or experiment.
 	\item (Statistical) sample is a subset of population. The aim of sampling is that our sample represents the population.\\ The advantage is that it is faster and cheaper to collect data than for the entire population.
@@ -858,7 +859,7 @@ Orthogonal Matrix:
 		\graphicspath{ {images/math/} }
 		\includegraphics[width=\linewidth]{simple_random_sampling}
 	\end{figure}
-	
+\bigskip
 	\begin{figure}[ht!]
 		\centering
 		\caption{A sample is a subset of population}
@@ -873,7 +874,8 @@ Orthogonal Matrix:
 
 \newpage
 \hformbar
-\formdesc{Random variable:} ($X$)
+
+\formdesc{Random variable}: ($X$)
 
 \begin{itemize}
 	\item A Random variable is a measurable function defined on probability space that maps from the sample space to real numbers.
@@ -891,7 +893,8 @@ Orthogonal Matrix:
 
 
 \hformbar
-\formdesc{Probability Distribution:}
+
+\formdesc{Probability Distribution}:
 
 \begin{itemize}
 	\item A Probability Distribution is  the mathematical function that gives probabilities of occurences of different possible outcomes for an experiment.
@@ -900,7 +903,8 @@ Orthogonal Matrix:
 
 \newpage
 \hformbar
-\formdesc{Probability Density Function (pdf):}
+
+\formdesc{Probability Density Function} : (pdf)
 \begin{itemize}
 	\item Pdf is a function used to specify the random variable falling within a particular range of values, as opposed to taking any particular value(which is 0, since there are infinite number of values).
 	\item Probablity is the integral or area under the curve over an interval.
@@ -921,7 +925,8 @@ Properties of pdf:
 
 \newpage
 \hformbar
-\formdesc{Gaussian/ Normal Distribution:} ($N$)
+
+\formdesc{Gaussian/ Normal Distribution}: ($N$)
 \begin{equation}
 	P(X=x) = \frac{1}{\sqrt{2\pi}\sigma} \exp{\frac{-(x-\mu)^2}{2\sigma^2}}
 \end{equation}
@@ -962,22 +967,22 @@ where:
 \end{figure}
 
 \newpage
-68-95-99.7 Rule:
+\formdesc{68-95-99.7 Rule}:
 
 \begin{itemize}
 	\item It is an empirical rule that a percentage of values lie within a band around the mean for a normal distribution.
 		
 	%https://en.wikipedia.org/wiki/Statistics#/media/File:Standard_Normal_Distribution.png
 	\begin{figure}[ht!]
-		\caption{pdf of a standard normal distribution}
+		\caption{pdf of a normal distribution with $\mu=0$}
 		\graphicspath{ {images/math/} }
 		\includegraphics[width=\linewidth]{standard_normal_distribution}
 	\end{figure}
 	\item The percentage of values are,
 		\begin{itemize}
-			\item 68\% of values lie within $\mu-1\sigma$ and $\mu+1\sigma$
-			\item 95\% of values lie within $\mu-2\sigma$ and $\mu+2\sigma$
-			\item 99.7\% of values lie within $\mu-3\sigma$ and $\mu+3\sigma$
+			\item 68\% of values lie within $\mu$-$\sigma$ and $\mu+\sigma$
+			\item 95\% of values lie within $\mu$-$2\sigma$ and $\mu$+$2\sigma$
+			\item 99.7\% of values lie within $\mu$-$3\sigma$ and $\mu$+$3\sigma$
 		\end{itemize}
 	
 	\item Is valid for any value of $\mu$ and $\sigma$
@@ -992,7 +997,8 @@ where:
 \newpage
 
 \hformbar
-\formdesc{Cumulative distribution function:} (CDF)
+
+\formdesc{Cumulative distribution function}: (CDF)
 
 \begin{itemize}
 	\item The probability that rv $X$ will take a value less than $x$. $P(X<x)$.
@@ -1018,7 +1024,8 @@ where:
 \end{itemize}
 
 \hformbar
-\formdesc{Probability mass function:} (PMF)
+
+\formdesc{Probability mass function}: (PMF)
 
 \begin{itemize}
 	\item Probability mass function (PMF) is a function that gives the probability that a discrete random variable is exactly equal to some value.
@@ -1046,23 +1053,166 @@ where:
 
 \newpage
 \hformbar
-\formdesc{Mean, Median and Mode:}
+
+\formdesc{Mean, Median and Mode}:
 
 \begin{itemize}
 	\item Mean ($\mu$) : $$\frac{1}{n}\sum_{i=1}^{n}x_i$$
 	where:
 	
-		$\mu$ - mean of the population
+		$\mu$ : mean of the population
 		
-		$n$ - size of the population
+		$n$ : size of the population
 		
-		$x_i$ - value from population
+		$x_i$ : value from population
 	\item Median : \\ Central most observation after sorting. If two values are in middle, median is the average of the two.
 	\item Mode: Most frequent observation.
 	\item These are the measures of central tendency.
 \end{itemize}
 
 \hformbar
-\formdesc{Variance:}
+
+\formdesc{Variance}: ($\sigma^2$)
+\begin{itemize}
+\item  Measures how far a set of numbers are spread.
+\begin{equation}
+	\sigma^2 = \sum_{i=1}^{n}\frac{(x_i-\mu)^2}{n}
+\end{equation}
+where:
+
+$\sigma^2$ : population variance
+
+$n$ : size of population
+
+$\mu$ : mean of population
+
+\item It is the expectation of the squared deviation of a random variable from its mean.
+\item The problem with variance as a measure of spread about mean is that, it is not standardised. And the units of variance are $unit^2$
+\end{itemize}
+
+
+\hformbar
+
+\formdesc{Standard deviation}: ($\sigma$)
+\begin{itemize}
+	\item Measure of the amount of variation or dispersion of a set of values.
+		\begin{equation}
+			\sigma = \sqrt{\sum_{i=1}^{n}\dfrac{(x_i-\mu)^2}{n}}
+		\end{equation}
+	\item  Measures how far a set of numbers are spread.
+	\item Has some useful properties compared to variance as discussed above.
+	\item Why use square?
+	\begin{itemize}
+		\item Squaring helps with penalising $-ve$ and $+ve$ deviations equally and sum will not be zero.
+		\item Squaring can emphasize larger differences.
+		\item Low std. deviation indicates values are closer to mean.
+		\item It also helps with algebra due to it being continuously differentiable and is the true L2 distance (norm).
+	\end{itemize}
+\end{itemize}
+
+\hformbar
+
+\formdesc{Expected value (or) Expectation}:
+%https://stats.stackexchange.com/questions/30365/why-is-expectation-the-same-as-the-arithmetic-mean
+
+\begin{itemize}
+	\item Expectation is numerically the average value or mean of a Random variable $X$.
+	\item It is the weighted average of a rv with weights as it's frequencies or probabilities.
+	\item For the set of values $\{1,1,2,2,2,2,2,2,3,3,3,3,3,3,3,3\}$ the expected value is nerically same as the mean or weighted average (weights are probabilities).
+	\item It holds true for large number of picks or realizations which are independent.
+	\item It usually refers to single event or experiment.
+\end{itemize}
+
+\hformbar
+
+\newpage
+
+\formdesc{Bessel's correction, Sample variance and Sample std. deviation}:
+\begin{itemize}
+	\item Same formula of variance and std. deviation can be used to find sample variance and sample std. distribution.
+	\item But In statistics often sample variance ($s^2$) and sample std. deviation  ($s$) are used to represent population variance ($\sigma^2$) and population std. deviation ($\sigma$).
+	\item This is due to finding population variance and std. deviation might not be feasible. So, a sample is drawn from population to find $s^2$ and   $s$  which approximate to $\sigma$ and $\sigma^2$.
+	\item This approximation (estimate) is biased. The formula overestimates. Check https://en.wikipedia.org/wiki/Bessel's\_correction
+	\item So, to remove this bias a correction factor is applied.
+	\item Uncorrected: (using same formula as population)
+	\begin{equation}
+				s^2 = \sum_{i=1}^{n}\frac{(x_i-\bar{x})^2}{n}
+			\end{equation}
+		\begin{equation}
+			s = \sqrt{\sum_{i=1}^{n}\dfrac{(x_i-\bar{x})^2}{n}}
+		\end{equation}
+	
+	\item Corrected using bessel's:
+	\begin{equation}
+		s^2 = \sum_{i=1}^{n}\frac{(x_i-\bar{x})^2}{n-1}
+	\end{equation}
+	\begin{equation}
+		s = \sqrt{\sum_{i=1}^{n}\dfrac{(x_i-\bar{x})^2}{n-1}}
+	\end{equation}
+	
+	where:
+	
+	$x_i$ : $i^{th}$ sample
+	
+	$s^2$ : sample variance
+	
+	$s$ : sample std. deviation
+	
+	$n$ : size of sample
+	
+	$\bar{x}$ : sample mean
+	
+	\item One can understand Bessel's correction as the degrees of freedom in the residuals vector (residuals, not errors, because the population mean is unknown): 
+	\item Bessel's correction is only necessary when the population mean is unknown, and one is estimating both population mean and population variance from a given sample, using the sample mean to estimate the population mean.
+	\item In that case there are n degrees of freedom in a sample of n points, and simultaneous estimation of mean and variance means one degree of freedom goes to the sample mean and the remaining n − 1 degrees of freedom (the residuals) go to the sample variance. 
+	\item However, if the population mean is known, then the deviations of the observations from the population mean have n degrees of freedom (because the mean is not being estimated – the deviations are not residuals but errors) and Bessel's correction is not applicable.
+\end{itemize}
+
+
+\hformbar
+
+\formdesc{Symmetric distribution}:
+\begin{itemize}
+	\item A symmetric distribution is one where it's pdf is symmetric about a vertical line. 
+	\item There should exist a value $x_0$ such that $f(x_0+\delta) = f(x_0-\delta)$ for all $\delta$.
+	\item Properties:
+		\begin{itemize}
+			\item The mean and median both occur at the symmteric point $x_0$
+			\item If distribution is unimodal (has only 1 mode), mode coincides with mean and median.
+			\item Skewness is zero.
+		\end{itemize}
+\end{itemize}
+
+\hformbar
+
+\formdesc{Mean, Median, Mode from PDF point of view}:
+
+\begin{itemize}
+
+	 \begin{figure}[ht!]
+		\centering
+		\caption{Mean, Median, Mode of an arbitrary distribution}
+		\graphicspath{ {images/math/} }
+		\includegraphics[height=160pt]{visualisation_mode_median_mean}
+	\end{figure}
+
+	\item We observe that mode is the peak value of pdf. i.e, most frequent/probable.
+	\item Median is the middle most value that splits the area into 2 equal parts. $$\int_{-\infty}^{m}f(x) dx = \frac{1}{2}$$ or $$\int_{m}^{\infty}f(x) dx = \frac{1}{2}$$ where $m$ is the median.
+	\item The \emph{mass} of the pdf is balanced at the mean point. or $$E[X] = \int_{-\infty}^{\infty}xf(x)dx$$ where $E[X]$ is the expected value or average of random variable $X$.
+	\item The distinction between mean and median is, median is not affected by the \emph{distribution} of area as long as the area towards left and right remain equal to each other.
+	\item Whereas, mean is affected by it. Adding more \emph{mass} at the extremes severly shifts the mean point toward that extreme.
+	\item This is aligned with the conventional definitions of median and mode discussed previously.
+\end{itemize}
+
+
+\hformbar
+
+\formdesc{Skewness and Kurtosis}:
+\begin{itemize}
+	\item The word \emph{skewness} means \emph{asymmetry}.
+	\item In statistics, skewness is a \textbf{measure of asymmetry} of a pdf about it's mean.
+	\item Skewness value can be 0, +ve, -ve or undefined.
+	\item 
+\end{itemize}
 
 \end{document}
