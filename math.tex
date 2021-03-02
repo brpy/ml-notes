@@ -1134,7 +1134,7 @@ $\mu$ : mean of population
 	\item This is due to finding population variance and std. deviation might not be feasible. So, a sample is drawn from population to find $s^2$ and   $s$  which approximate to $\sigma$ and $\sigma^2$.
 	\item This approximation (estimate) is biased. The formula overestimates. Check https://en.wikipedia.org/wiki/Bessel's\_correction
 	\item So, to remove this bias a correction factor is applied.
-	\item Uncorrected: (using same formula as population)
+	\item Uncorrected: (using same formula as population) (biased estimate of population mean)
 	\begin{equation}
 				s^2 = \sum_{i=1}^{n}\frac{(x_i-\bar{x})^2}{n}
 			\end{equation}
@@ -1142,7 +1142,7 @@ $\mu$ : mean of population
 			s = \sqrt{\sum_{i=1}^{n}\dfrac{(x_i-\bar{x})^2}{n}}
 		\end{equation}
 	
-	\item Corrected using bessel's:
+	\item Corrected using bessel's: (unbiased estimate of population mean)
 	\begin{equation}
 		s^2 = \sum_{i=1}^{n}\frac{(x_i-\bar{x})^2}{n-1}
 	\end{equation}
@@ -1207,12 +1207,63 @@ $\mu$ : mean of population
 
 \hformbar
 
-\formdesc{Skewness and Kurtosis}:
+\formdesc{Skewness}:
 \begin{itemize}
 	\item The word \emph{skewness} means \emph{asymmetry}.
 	\item In statistics, skewness is a \textbf{measure of asymmetry} of a pdf about it's mean.
 	\item Skewness value can be 0, +ve, -ve or undefined.
-	\item 
+	\item For unimodal distributions, (which have only one mode),
+	\begin{figure}[ht!]
+		\centering
+		\caption{Skewness General rule of thumb for unimodal distributions}
+		\graphicspath{ {images/math/} }
+		\includegraphics[width=\linewidth]{relationship_between_mean_and_median_under_different_skewness}
+	\end{figure}
+
+	\item However this may not always be true. If one tail is long and thin and other tail is fat and short skewness may still be zero.
+	\item Negative skew : Mass is concentrated on the right; Left skewed, left tailed despite the fact that the curve appears leaning to the right.
+	\item Right skew : Mass is concentrated on the left; Right skewed, right tailed despite the fact that the curve appears leaning to the left.
+	\item Note that this is only a general rule for unimodal distributions. (Not always holds true) 
+	\item Pearson's moment coefficient of skewness: $$\bar{\mu_3} = E\Bigg[\Big({\frac{X-\mu}{\sigma}}\Big)^3\Bigg]$$
 \end{itemize}
+
+\hformbar
+
+\formdesc{Kurtosis}:
+\begin{itemize}
+	\item Is a  \textbf{measure of tailedness}.
+	\item Describes the extent of \emph{outliers} or \emph{extreme} values.
+	\item Does not describe peakedness or data configuration near mean.
+	\item Kurtosis of Gaussian/ Normal distrubution $N$ is 3.
+	\item It is common to compare kurtosis of other distributions with normal. The value is called excess kurtosis.
+	\item Excess kurtosis = kurtosis - 3
+	\item K $<$ 3 : Platykurtic distribution. Fewer no. and less extreme outliers than Gaussian ($N$).\\ Tails approach zero faster than gaussian. Thin, short tails.
+	\item K $>$ 3 : Leptokurtic distribution. More no. and high extreme outliers than Gaussian ($N$).\\ Tails approach zero slower than gaussian. Fat, long tails.
+	\item Pearson moments: $$\bar{\mu_4} = E\Bigg[\Big({\frac{X-\mu}{\sigma}}\Big)^4\Bigg]$$
+\end{itemize}
+
+\hformbar
+
+\formdesc{Standardisation}:
+
+\begin{itemize}
+	\item Transforming any distribution into a distribution with $\mu=0$ and $\sigma=\sigma^2=1$.
+	\item The distribution and it's shape remains the same but the scale changes.
+	\item By this process, we can bring all distributions into one frame of reference.
+	\item Commonly called 0,1 scaling or  Mean centering scaling.
+	$$Z=\frac{x_i-\mu}{\sigma}$$
+\end{itemize}
+\hformbar
+
+\formdesc{Standard Normal variate}:
+\begin{itemize}
+	\item A standard normal variate is an outcome from a Normal distribution $N$ with mean $\mu=0$ and $\sigma=\sigma^2=1$.
+	
+\end{itemize}
+
+\hformbar
+
+\formdesc{KDE (Kernel density estimation)}:
+
 
 \end{document}
