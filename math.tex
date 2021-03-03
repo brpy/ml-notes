@@ -1257,13 +1257,79 @@ $\mu$ : mean of population
 
 \formdesc{Standard Normal variate}:
 \begin{itemize}
-	\item A standard normal variate is an outcome from a Normal distribution $N$ with mean $\mu=0$ and $\sigma=\sigma^2=1$.
+	\item A standard normal variate is an outcome from a Normal distribution $N$ with mean $\mu=0$ and $\sigma=\sigma^2=1$.  $N(0,1)$
 	
 \end{itemize}
 
 \hformbar
 
 \formdesc{KDE (Kernel density estimation)}:
+\begin{itemize}
+	\item KDE is a non parametric way to estimate the probability distribution function (pdf) of a random variable.
+	\item Kernel density estimation is a fundamental data smoothing problem where inferences about the population are made, based on a finite data sample.
+		\begin{figure}[ht!]
+		\centering
+		\caption{histogram (left) and kernel density estimate (right) constructed using the same data with six individual kernels}
+		\graphicspath{ {images/math/} }
+		\includegraphics[width=\linewidth]{comparison_of_1d_histogram_and_kde.png}
+	\end{figure}
+	\item Bandwidth $h$ is a free parameter. When $h$ tends to 0 there is no smoothing. When $h$ tends to $\infty$ the estimate is the shape of the kernel used rather than distribution.
+	\item Generally Gaussian kernels are used.
+\end{itemize}
 
 
+\hformbar
+
+\formdesc{Sampling Distribution}:
+\begin{itemize}
+	\item Sampling distribution of a statistic is when a statistic is sampled from a distribution.
+	\item Depending on the sampling procedure, sample size and statistic the sampling distribution may vary.
+	\item If the statistic is mean, the distribution of these means, or averages, is called the "sampling distribution of the sample mean"
+\end{itemize}
+
+
+\hformbar
+
+\formdesc{Central Limit theorem}:
+\begin{itemize}
+	\item For many distributions, the sampling distribution of the sample mean tends to follow a \textbf{Normal distribution}.
+	\item The distribution is $N (\mu,\frac{\sigma^2}{n})$ where variance is reduced by a factor of $n$ where $n$ is the sample size. The mean remains the same.
+	\item A general rule of thumb is to have a sample size $n > 30$.
+	\item It is important to note that the sampling statitstic used here is Mean.
+\end{itemize}
+
+\hformbar
+
+\formdesc{Q-Q Plot}: (quantile-quantile  plot)
+\begin{itemize}
+	\item Is a graphical method for comparing two probability distributions.
+	\item It involves plotting the two distributions quantiles against each other.
+	\item If $D^1$ and $D^2$ are the two distributions to compare, pairs of points $(D_i^ 1,D_i^ 2)$ are plotted.
+	
+		where:
+		
+			$D_i$ is the $i^{th}$ percentile of of distribution $D$
+	\item If both distributions are identical, $x$ coordinate and $y$ coordinate will be the same and the qq plot will look like a line of equation $y=x$.
+	
+	\begin{figure}[ht!]
+		\centering
+		\caption{qq plot of 2 normal distributions}
+		\graphicspath{ {images/math/} }
+		\includesvg[width=\linewidth]{normal_normal_qq.svg}
+	\end{figure}
+
+	\item If the distributions are same but different scales (pdf of same shapes but different sizes), qq plot will result in a strainght line.
+	\item The slope of this linear relationship represents the scale difference.
+		\begin{figure}[ht!]
+		\centering
+		\graphicspath{ {images/math/} }
+		\includesvg[width=\linewidth]{qqplot.svg}
+	\end{figure}
+
+	\item Through qq plot, experimental data can be compared to theoretical distributions.
+\end{itemize}
+
+\hformbar
+
+\formdesc{Chebyshev Inequality}:
 \end{document}
