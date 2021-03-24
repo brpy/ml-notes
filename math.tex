@@ -1382,14 +1382,30 @@ $\mu$ : mean of population
 \newcommand\Mycomb[2][^n]{\prescript{#1\mkern-0.5mu}{}C_{#2}}
 \begin{itemize}
 	\item Discrete probability distribution of $n$ Bernouli trials with success probability as $p$
-	\item Each Bernouli trial $\implies$ Yes or no outcomes; Coin toss.
-	\item pmf \begin{math}
+	\item Each Bernouli trial $\implies$ Yes or no outcome; Coin toss. Performed once ($n$ (no. of trials) = 1).
+
+	\item Pmf \begin{math}
 		 = Pr(k;n,p) = \Mycomb[n]{k}\quad  p^k (1-p)^{n-k}
 	\end{math}
 	
-	where, $k = {0, 1, 2, ..., n}$
+	where, $k = {0, 1, 2, ..., n}$ 
+	
+	no. of succeses = $k$ and no. of trials = $n$
+	
 \end{itemize}
 
+
+\hformbar
+
+\formdesc{Multinomial Distribution}:
+\begin{itemize}
+		\item There is also \emph{Multinomial Distribution} that is a generalization of Binomial distribution.
+		
+		\item A Multinomial Dicstribution can have more than 2 outcomes.
+		
+		\item A Binomial distribution is a Multinomial Distribution with no. of outcomes = 2 and $n$(trials) $>$ 1.
+		
+\end{itemize}
 
 \hformbar
 
@@ -1451,10 +1467,29 @@ $\mu$ : mean of population
 
 \hformbar
 
-\formdesc{Power Transform}: (Box - cox transform)
+\formdesc{Power Transform}: (Box - Cox Transform)
 
 \begin{itemize}
-	\item Many machine learning algorithms perform better when the distribution of variables is Gaussian.
+	\item Many machine learning algorithms perform better when the distribution of variables is Gaussian. (Linear regression, Naive Bayes)
+	\item More statistical tests can be performed if dstribution follows Normal/ Gaussian.
+	\item Power transforms are a technique for transforming numerical input or output variables to have a Gaussian or more-Gaussian-like probability distribution.
+	\item \emph{Box - Cox} is one of the Power Transforms. There are other transforms like Yeo-Johnson Transform.
+	
+	%https://en.wikipedia.org/wiki/Power_transform#Box%E2%80%93Cox_transformation
+	\begin{math}
+		{\displaystyle y_{i}^{(\lambda )}={\begin{cases}{\dfrac {y_{i}^{\lambda }-1}{\lambda }}&{\text{if }}\lambda \neq 0,\\\ln y_{i}&{\text{if }}\lambda =0,\end{cases}}}
+	\end{math}
+
+where,
+$y_1, y_2,..., y_n$ are data points.
+
+	\item The parameter $\lambda$ is estimated using the profile likelihood function and using goodness-of-fit tests.
+ 
 \end{itemize}
+
+
+\hformbar
+
+\formdesc{Co-Variance}:
 
 \end{document}
