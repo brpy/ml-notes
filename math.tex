@@ -1365,4 +1365,51 @@ $\mu$ : mean of population
 	\end{figure}
 
 \end{itemize}
+
+\hformbar
+
+\formdesc{Bernouli Distribution}:
+
+\begin{itemize}
+	\item Discrete probability distribution which takes value 1 with probbility $p$ and 0 with probability $1-p$
+	\item Yes or no outcomes; Coin toss.
+	\item Probailities of two outcomes are success: $p$ and failure: $q = 1-p$
+\end{itemize}
+
+\hformbar
+
+\formdesc{Binomial Distribution}:
+\newcommand\Mycomb[2][^n]{\prescript{#1\mkern-0.5mu}{}C_{#2}}
+\begin{itemize}
+	\item Discrete probability distribution of $n$ Bernouli trials with success probability as $p$
+	\item Each Bernouli trial $\implies$ Yes or no outcomes; Coin toss.
+	\item pmf \begin{math}
+		 = Pr(k;n,p) = \Mycomb[n]{k}\quad  p^k (1-p)^{n-k}
+	\end{math}
+	
+	where, $k = {0, 1, 2, ..., n}$
+\end{itemize}
+
+
+\hformbar
+
+\formdesc{Log-normal distribution}:
+	\begin{itemize}
+		\item If $X$ is log normal, then $\log_e(X)$ is normally distributed.
+		%pdf-log_normal_distributions.svg https://en.wikipedia.org/wiki/Log-normal_distribution#/media/File:PDF-log_normal_distributions.svg
+			\begin{figure}[ht!]
+			\centering
+			\graphicspath{ {images/math/} }
+			\caption{log normal distributions with same $\mu=0$ and different $\sigma$}
+			\includesvg[width=\linewidth]{pdf-log_normal_distributions.svg}
+		\end{figure}
+	\item High $\sigma$ leads to fatter tail
+	\item Some occurences
+		\begin{itemize}
+			\item Length of comments
+			\item Time spent on online articles
+			\item Income of 97\% - 99\% population
+		\end{itemize}
+	\end{itemize}
+
 \end{document}
