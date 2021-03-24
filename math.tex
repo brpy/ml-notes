@@ -1292,7 +1292,7 @@ $\mu$ : mean of population
 
 \formdesc{Central Limit theorem}:
 \begin{itemize}
-	\item For many distributions, the sampling distribution of the sample mean tends to follow a \textbf{Normal distribution}.
+	\item For many distributions, the sampling distribution of the sample mean tends to follow a \emph{Normal distribution}.
 	\item The distribution is $N (\mu,\frac{\sigma^2}{n})$ where variance is reduced by a factor of $n$ where $n$ is the sample size. The mean remains the same.
 	\item A general rule of thumb is to have a sample size $n > 30$.
 	\item It is important to note that the sampling statitstic used here is Mean.
@@ -1411,5 +1411,50 @@ $\mu$ : mean of population
 			\item Income of 97\% - 99\% population
 		\end{itemize}
 	\end{itemize}
+
+
+\hformbar
+
+\formdesc{Power law}:
+	\begin{itemize}
+		\item In statistics, a power law is a functional relationship between two quantities, where a relative change in one quantity results in a proportional relative change in the other quantity, independent of the initial size of those quantities.
+		\item one quantity varies as a power of another.
+		\item The area of a square in terms of the length of its side, if the length is doubled, the area is multiplied by a factor of four.
+	\end{itemize}
+
+
+\hformbar
+
+\formdesc{Pareto distribution}:
+	\begin{itemize}
+		\item Is a power law distribution
+		\item Originally invented to represent wealth distribution. 
+		\item The pareto principle or 80-20 Rule states that 80\% of outcomes are due to 20\% causes. Only Pareto distributions with shape value $(\alpha)$ of $\log_45$ ≈ 1.16 precisely reflect it. 
+		\item The parameters are scale param $x_m$ and shape param $\alpha$
+		%probability_density_function_of_Pareto_distribution.svg
+		% https://en.wikipedia.org/wiki/File:Probability_density_function_of_Pareto_distribution.svg#/media/File:Probability_density_function_of_Pareto_distribution.svg
+			\begin{figure}[ht!]
+			\centering
+			\graphicspath{ {images/math/} }
+			\caption{Pareto Type I probability density functions for various $\alpha$ with $x_m$= 1. }
+			\includesvg[width=\linewidth]{probability_density_function_of_Pareto_distribution.svg}
+		\end{figure}
+	
+	\begin{math}
+		{\displaystyle {\overline {F}}(x)=\Pr(X>x)={\begin{cases}\left({\frac {x_{\mathrm {m} }}{x}}\right)^{\alpha }&x\geq x_{\mathrm {m} },\\1&x<x_{\mathrm {m} },\end{cases}}}
+	\end{math}
+
+	\item Low $\sigma$ leads to fatter tail.
+	
+	\end{itemize}
+
+
+\hformbar
+
+\formdesc{Power Transform}: (Box - cox transform)
+
+\begin{itemize}
+	\item Many machine learning algorithms perform better when the distribution of variables is Gaussian.
+\end{itemize}
 
 \end{document}
