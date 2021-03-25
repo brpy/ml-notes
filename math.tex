@@ -1492,4 +1492,45 @@ $y_1, y_2,..., y_n$ are data points.
 
 \formdesc{Co-Variance}:
 
+\begin{itemize}
+	\item Compares two Random variables.
+	\item Represents the direction of variability between two RV.
+	
+	\begin{equation}
+	Cov(X, Y) = \frac{1}{n} \sum_{i=1}^{n} (x_i-\mu_x) (y_i-\mu_y)
+	\end{equation}
+Where:
+
+$\mu_x$ : Expectation of x
+
+$\mu_y$ : Expectation of y
+
+\item Covariance (X, X) = Var (X)
+\item Cov(X, Y) = +ve when X$\uparrow$ $\implies$ Y $\uparrow$
+\item Cov(X, Y) = +ve when X$\uparrow$ $\implies$ Y $\downarrow$ , or
+\item Cov(X, Y) = +ve when X$\downarrow$ $\implies$ Y $\uparrow$
+
+\begin{figure}[ht!]
+	\centering
+	\graphicspath{ {images/math/} }
+	\caption{Covariance }
+	\includesvg[width=\linewidth]{covariance.svg}
+\end{figure}
+
+\item Co variance is susceptible by units and scale of data, similar to variance.
+\item The magnitude of covariance in itself cannot represent much. Only the sign indicates the direction of variation.
+\end{itemize}
+
+\break
+
+\hformbar
+
+\formdesc{Correlation}:
+
+\begin{itemize}
+	\item Correlation improves upon the issues co variance has by introducing  std. deviation $\sigma$ term.
+	\item The magnitude of Correlation can represent the strength of linear dependence/ association between the variables.
+	\item It is important before we draw any conclusions to remember that emph{Correlation does not imply causation}.
+\end{itemize}
+
 \end{document}
