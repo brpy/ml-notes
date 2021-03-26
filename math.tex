@@ -1528,9 +1528,113 @@ $\mu_y$ : Expectation of y
 \formdesc{Correlation}:
 
 \begin{itemize}
-	\item Correlation improves upon the issues co variance has by introducing  std. deviation $\sigma$ term.
+	\item Correlation also tells us how strong the relationship is between two rv's.
 	\item The magnitude of Correlation can represent the strength of linear dependence/ association between the variables.
 	\item It is important before we draw any conclusions to remember that \emph{Correlation does not imply causation}.
 \end{itemize}
+
+
+\formdesc{Pearson Correlation Coefficient}: ($\rho$)
+\begin{itemize}
+	\item  It is the covariance of two variables, divided by the product of their standard deviations.
+	\item It is a normalised version of covariance.
+	
+	\begin{equation}
+		{\displaystyle \rho _{X,Y}={\frac {\operatorname {cov} (X,Y)}{\sigma _{X}\sigma _{Y}}}}
+	\end{equation}
+
+%correlation_coefficient.png
+\begin{figure}[ht!]
+	\centering
+	\graphicspath{ {images/math/} }
+	\caption{Pearson Correlation ex.1 }
+	\includegraphics[width=\linewidth]{correlation_coefficient.png}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+	\graphicspath{ {images/math/} }
+	\caption{Pearson Correlation ex.2}
+	\includesvg[width=\linewidth]{correlation_examples2.svg}
+\end{figure}
+
+\end{itemize}
+
+\break
+
+\hformbar
+
+\formdesc{Spearman Rank Correlation}: ($\operatorname{r}$)
+\begin{itemize}
+	\item Involves Pearson Correlation of ranks of RV.
+	\begin{equation}
+		{\displaystyle r_{s}=\rho _{\operatorname {r} _{X},\operatorname {r} _{Y}}={\frac {\operatorname {cov} (\operatorname {r} _{X},\operatorname {r} _{Y})}{\sigma _{\operatorname {r} _{X}}\sigma _{\operatorname {r} _{Y}}}},}
+	\end{equation}
+
+where:
+
+$r_{s}$ : Spearman rank correlation
+
+${r} _{X}$ : Rank of rv x
+
+${r} _{Y}$ :  Rank of rv y
+
+\item Pearson's correlation assesses \emph{linear relationships} while,
+\item Spearman's correlation assesses \emph{monotonic relationships}. (Doesn't have to be linear)
+\item $\operatorname{r}=1$ for a strictly monotonically increasing function.
+
+%spearman_fig1.svg
+\begin{figure}[ht!]
+	\centering
+	\graphicspath{ {images/math/} }
+	\caption{Spearnman Correlation ex.1}
+	{\vspace{10px} \small{$\operatorname{r}=1$ because it is monotonically increasing.}}
+	\includesvg[width=\linewidth]{spearman_fig1.svg}
+\end{figure}
+
+\break
+
+\item Spearman correlation is less sensitive to outliers because the max value it can have is its rank; Unlike in Pearson.
+
+%spearman_fig3.svg
+\begin{figure}[ht!]
+	\centering
+	\graphicspath{ {images/math/} }
+	\caption{Spearnman Correlation ex.2}
+	{\vspace{10px}\small{$\operatorname{r}$ is less sensitive than the Pearson correlation to strong outliers}}
+	\includesvg[width=\linewidth]{spearman_fig3.svg}
+\end{figure}
+
+\item $\operatorname{r}=-1$ for a strictly monotonically decreasing function.
+\item Ranks for each rv are given \emph{starting from 1}, in \emph{ascending} fashion.
+
+\begin{center}
+	\begin{tabular}{ |c|c|c|c|c| } 
+		\hline
+		  & X & Y & $\operatorname{r}_X$ & $\operatorname{r}_Y$ \\
+		  \hline
+		sample1 & 160 & 52 & 4 & 3 \\ 
+		sample2 & 150 & 66 & 2 & 4 \\
+		sample3 & 170 & 68 & 5 & 5 \\
+		sample4 & 140 & 46 & 1 & 1 \\
+	    sample5 & 158 & 51 & 3 & 2 \\   
+		\hline
+	\end{tabular}
+\end{center}
+
+
+where:
+
+${r} _{X}$ : Rank of rv x
+
+${r} _{Y}$ :  Rank of rv y
+
+\end{itemize}
+
+
+\hformbar
+
+\formdesc{Confidence Interval}:
+
 
 \end{document}
