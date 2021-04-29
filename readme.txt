@@ -5,3 +5,5 @@ LaTeX template used https://www.overleaf.com/articles/statistics-formulae-collec
 Few images are collected from external sources. No copyright infringement intended.
 
 For educational purposes only. May have some errors.
+
+Feel free to add PRs and issues.
