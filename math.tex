@@ -1252,6 +1252,19 @@ $\mu$ : mean of population
 	\item By this process, we can bring all distributions into one frame of reference.
 	\item Commonly  Mean centering scaling.
 	$$Z=\frac{x_i-\mu}{\sigma}$$
+	\item Less affected by outliers than Normalization.
+\end{itemize}
+\hformbar
+
+\formdesc{Normalization}:
+
+\begin{itemize}
+	\item Scales all values into the range [0,1]
+	\item Also called 0-1 scaling.
+	$$X_i=\frac{x_i-{min}}{{max}-{min}}$$
+	\item The minimum data point becomes zero and maximum data point becomes 1.
+	\item More affected by outliers than Standardization because min and max values are directly used in calculation Normalized values.
+	\item Standardization is preferred over Normalization most of the times.
 \end{itemize}
 \hformbar
 
