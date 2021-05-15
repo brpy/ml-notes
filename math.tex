@@ -1253,6 +1253,9 @@ $\mu$ : mean of population
 	\item Commonly  Mean centering scaling.
 	$$Z=\frac{x_i-\mu}{\sigma}$$
 	\item Less affected by outliers than Normalization.
+	\item Rescales data to have mean $\mu=0$ and std. deviation $\sigma=1$
+	\item Gives features comparative scaling.
+	\item Standardization is recommended for distance based models and faster convergence in neural networks.
 \end{itemize}
 \hformbar
 
@@ -1265,6 +1268,7 @@ $\mu$ : mean of population
 	\item The minimum data point becomes zero and maximum data point becomes 1.
 	\item More affected by outliers than Standardization because min and max values are directly used in calculation Normalized values.
 	\item Standardization is preferred over Normalization most of the times.
+	\item Give features the same scale.
 \end{itemize}
 \hformbar
 
