@@ -1244,7 +1244,7 @@ $\mu$ : mean of population
 
 \hformbar
 
-\formdesc{Standardisation}:
+\formdesc{Standardization}:
 
 \begin{itemize}
 	\item Transforming any distribution into a distribution with $\mu=0$ and $\sigma=\sigma^2=1$.
@@ -1252,6 +1252,23 @@ $\mu$ : mean of population
 	\item By this process, we can bring all distributions into one frame of reference.
 	\item Commonly  Mean centering scaling.
 	$$Z=\frac{x_i-\mu}{\sigma}$$
+	\item Less affected by outliers than Normalization.
+	\item Rescales data to have mean $\mu=0$ and std. deviation $\sigma=1$
+	\item Gives features comparative scaling.
+	\item Standardization is recommended for distance based models and faster convergence in neural networks.
+\end{itemize}
+\hformbar
+
+\formdesc{Normalization}:
+
+\begin{itemize}
+	\item Scales all values into the range [0,1]
+	\item Also called 0-1 scaling.
+	$$X_i=\frac{x_i-{min}}{{max}-{min}}$$
+	\item The minimum data point becomes zero and maximum data point becomes 1.
+	\item More affected by outliers than Standardization because min and max values are directly used in calculation Normalized values.
+	\item Standardization is preferred over Normalization most of the times.
+	\item Give features the same scale.
 \end{itemize}
 \hformbar
 
@@ -1339,6 +1356,7 @@ $\mu$ : mean of population
 	\item In other words, there's an upper limit on the number of \emph{extreme} values. 
 	\item When distribution is not known, but $\mu$ and $\sigma$ are known and finite and $\sigma$ is non zero, $$P(|x-\mu|\geq k\sigma) \leq \frac{1}{k^2}$$ or, $$P(\mu-k\sigma < X < \mu+k\sigma) > 1-\frac{1}{k^2}$$
 	\item This is a weaker inequality than 68-95-99.7 rule of normal distribution.
+	\item An example for a distribution that violates this is Dirac delta.
 	
 \end{itemize}
 
