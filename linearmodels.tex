@@ -1,0 +1,143 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Two Column Colour Article
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to howtotex.com.
+% Date: Feb 2011
+% 
+
+%%% Preamble
+\documentclass[	DIV=calc,%
+paper=a4,%
+fontsize=11pt,%
+twocolumn]{scrartcl} % KOMA-article class
+
+\usepackage{lipsum}	% Package to create dummy text
+\usepackage[english]{babel}	% English language/hyphenation
+\usepackage[protrusion=true,expansion=true]{microtype}	% Better typography
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage[pdftex]{graphicx} % Enable pdflatex
+\usepackage{wrapfig} % enable figure wrapping
+\usepackage[svgnames]{xcolor} % Enabling colors by their 'svgnames'
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats
+\usepackage{epstopdf} % Converts .eps to .pdf
+\usepackage{subfig}	% Subfigures
+\usepackage{booktabs} % Nicer tables
+\usepackage{fix-cm}	% Custom fontsizes
+\usepackage{booktabs} % prof. looking tables (www.en.wikibooks.org/wiki/LaTeX/Tables#Professional_tables)
+\usepackage{tikz}
+\usepackage{amsmath}
+\usetikzlibrary{quotes,angles}
+\usepackage{mathtools}
+\usepackage{tkz-euclide}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{svg}
+\usepackage{tikz-3dplot}
+
+%%% Custom sectioning (sectsty package)
+\usepackage{sectsty} % Custom sectioning (see below)
+\allsectionsfont{%		% Change font of al section commands
+	\usefont{OT1}{phv}{b}{n}%	% bch-b-n: CharterBT-Bold font
+}
+
+\sectionfont{%		% Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%	% bch-b-n: CharterBT-Bold font
+}
+
+
+%%% Headers and footers
+\usepackage{fancyhdr} % Needed to define custom headers/footers
+\pagestyle{fancy} % Enabling the custom headers/footers
+\usepackage{lastpage}	
+
+% Header (empty)
+\lhead{}
+\chead{}
+\rhead{\today}
+% Footer (you may change this to your own needs)
+\lfoot{\footnotesize \texttt{Math Notes for ML} \textbullet ~ Bhargav}
+\cfoot{}
+\rfoot{\footnotesize page \thepage\ of \pageref{LastPage}}	% "Page 1 of 2"
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\hformbar}[1]{\vspace{5pt}\hrule\vspace{10pt}} % creates a horizontal bar to separate formulae better; space adaptions can be made centrally here
+
+
+%%% Creating an initial of the very first character of the content
+\usepackage{lettrine}
+\newcommand{\initial}[1]{%
+	\lettrine[lines=3,lhang=0.3,nindent=0em]{
+		\color{DarkGoldenrod}
+		{\textsf{#1}}}{}}
+
+%%% Title, author and date metadata
+\usepackage{titling} % For custom titles
+
+\newcommand{\HorRule}{\color{DarkGoldenrod}%	% Creating a horizontal rule
+	\rule{\linewidth}{1pt}%
+}
+
+\pretitle{\vspace{-30pt} \begin{flushleft} \HorRule 
+		\fontsize{20}{20} \usefont{OT1}{phv}{b}{n} \color{DarkRed} \selectfont 
+	}
+	\title{Linear Models - Logistic/Linear Regression, SVM} % Title of your article goes here
+	\posttitle{\par\end{flushleft}\vskip 0.5em}
+
+\preauthor{\begin{flushleft}\large \lineskip 0.5em \usefont{OT1}{phv}{b}{sl} \color{DarkRed}}
+	\author{Bhargav} % Author name goes here
+	\postauthor{\footnotesize \usefont{OT1}{phv}{m}{sl} \color{Black} \hspace{5pt} github.com/brpy/ml-notes \par\end{flushleft}\HorRule}
+
+\date{\today} % No date
+
+%%% wws: create a non-indented formula name
+\newcommand{\formdesc}[1]{\noindent\textbf{#1}}
+
+% A 2x2 shape matrix
+\newcommand{\tctmat}[4]{\begin{bmatrix}
+		$#1$ & $#2$\\
+		$#3$ & $#4$
+\end{bmatrix}}
+
+% A 2x1 shape matrix
+\newcommand{\tcomat}[2]{\begin{bmatrix}
+		$#1$\\
+		$#2$
+\end{bmatrix}}
+
+% A 3x3 shape matrix
+\newcommand{\thcthmat}[9]{\begin{bmatrix}
+		$#1$ & $#2$ & $#3$\\
+		$#4$ & $#5$ & $#6$\\
+		$#7$ & $#8$ & $#9$
+\end{bmatrix}}
+
+% A 3x1 shape matrix
+\newcommand{\thcomat}[3]{\begin{bmatrix}
+		$#1$\\
+		$#2$\\
+		$#3$
+\end{bmatrix}}
+
+\DeclareUnicodeCharacter{03C6}{$\phi$ }
+\DeclareUnicodeCharacter{03C3}{$\sigma$ }
+\DeclareUnicodeCharacter{03BC}{$\mu$ }
+\DeclareUnicodeCharacter{2212}{$-$}
+\DeclareUnicodeCharacter{03A6}{$\Phi$ }
+\DeclareUnicodeCharacter{2248}{$\approx$ }
+
+%%% Begin document -----------------------------------------------------------------
+\begin{document}
+	\maketitle
+	\thispagestyle{fancy} 	% Enabling the custom headers/footers for the first page 
+	% The first character should be within \initial{}
+	\section{Linear Models}
+	
+	\footnotesize{The following notes is primarily made for my revision. I might have skipped some topics that seemed obvious to me. I do not guarantee factual correctness of the notes. If you feel there are any errors, open a GitHub issue/pr. Notes material is collected from various sources. Image credits are given in Tex document and in src.csv}
+	
+	\hspace{10pt}
+
+\hformbar
+\formdesc{Logistic Regression:}
+
+\end{document}
